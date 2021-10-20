@@ -1,0 +1,46 @@
+{
+  "accessibility": {
+    "skip_to_product_info": "TODO",
+    "previous_slide": "TODO",
+    "of": "TODO",
+    "next_slide": "TODO",
+    "star_reviews_info": "TODO",
+    "total_reviews": "TODO",
+    "close": "TODO"
+  },
+  "products": {
+    "product": {
+      "xr_button_label": "TODO",
+      "xr_button": "TODO",
+      "include_taxes": "TODO",
+      "shipping_policy_html": "TODO",
+      "quantity": {
+        "label": "TODO",
+        "decrease": "TODO",
+        "increase": "TODO"
+      },
+      "product_variants": "TODO",
+      "sold_out": "TODO",
+      "add_to_cart": "TODO",
+      "pickup_availability": {
+        "unavailable": "TODO",
+        "refresh": "TODO"
+      }
+    },
+    "modal": {
+      "label": "TODO"
+    }
+  },
+  "general": {
+    "share": {
+      "share_url": "TODO",
+      "close": "TODO",
+      "copy_to_clipboard": "TODO"
+    }
+  },
+  "newsletter": {
+    "label": "TODO",
+    "button_label": "TODO",
+    "success": "TODO"
+  }
+}

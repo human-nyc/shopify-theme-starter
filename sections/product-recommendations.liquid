@@ -1,0 +1,27 @@
+{% schema %}
+{
+  "name": "Product recommendations",
+  "tag": "section",
+  "class": "spaced-section",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "Dynamic recommendations use order and product information to change and improve over time. [Learn more](https://help.shopify.com/en/themes/development/recommended-products)"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "default": "You may also like",
+      "label": "Heading"
+    },
+    {
+      "type": "range",
+      "id": "limit",
+      "min": 1,
+      "max": 10,
+      "default": 3,
+      "label": "Number of Recommended Products"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,29 @@
+{% schema %}
+{
+  "name": "Subtotal",
+  "class": "cart__footer-wrapper",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_cart_note",
+      "default": false,
+      "label": "Enable cart note"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "subtotal",
+      "name": "Subtotal price",
+      "limit": 1
+    },
+    {
+      "type": "buttons",
+      "name": "Checkout button",
+      "limit": 1
+    },
+    {
+      "type": "@app"
+    }
+  ]
+}
+{% endschema %}
