@@ -6,7 +6,6 @@
       <meta name="viewport" content="width=device-width,initial-scale=1">
       <meta name="theme-color" content="">
       <link rel="canonical" href="{{ canonical_url }}">
-      <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
 
       {%- if settings.favicon != blank -%}
         <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 32, height: 32 }}">
@@ -247,6 +246,11 @@
         <link rel="preload" as="font" href="{{ settings.type_header_font | font_url }}" type="font/woff2" crossorigin>
       {%- endunless -%}
 
+      {%- if localization.available_countries.size > 1 or localization.available_languages.size > 1 -%}
+        {{ 'component-localization-form.css' | asset_url | stylesheet_tag: preload: true }}
+        <script src="{{ 'localization-form.js' | asset_url }}" defer="defer"></script>
+      {%- endif -%}
+
       {%- if settings.predictive_search_enabled -%}
         <link
           rel="stylesheet"
@@ -308,11 +312,22 @@
           unavailable_with_option: `{{ 'products.product.value_unavailable' | t: option_value: '[value]' }}`,
         };
 
+        window.quickOrderListStrings = {
+          itemsAdded: `{{ 'sections.quick_order_list.items_added.other' | t: quantity: '[quantity]' }}`,
+          itemAdded: `{{ 'sections.quick_order_list.items_added.one' | t: quantity: '[quantity]' }}`,
+          itemsRemoved: `{{ 'sections.quick_order_list.items_removed.other' | t: quantity: '[quantity]' }}`,
+          itemRemoved: `{{ 'sections.quick_order_list.items_removed.one' | t: quantity: '[quantity]' }}`,
+          viewCart: `{{- 'sections.quick_order_list.view_cart' | t -}}`,
+          each: `{{- 'sections.quick_order_list.each' | t: money: '[money]' }}`,
+        };
+
         window.accessibilityStrings = {
           imageAvailable: `{{ 'products.product.media.image_available' | t: index: '[index]' }}`,
           shareSuccess: `{{ 'general.share.success_message' | t }}`,
           pauseSlideshow: `{{ 'sections.slideshow.pause_slideshow' | t }}`,
           playSlideshow: `{{ 'sections.slideshow.play_slideshow' | t }}`,
+          recipientFormExpanded: `{{ 'recipient.form.expanded' | t }}`,
+          recipientFormCollapsed: `{{ 'recipient.form.collapsed' | t }}`,
         };
       </script>
 

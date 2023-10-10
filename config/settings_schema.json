@@ -2,7 +2,7 @@
   {
     "name": "theme_info",
     "theme_name": "Dawn",
-    "theme_version": "9.0.0",
+    "theme_version": "11.0.0",
     "theme_author": "Shopify",
     "theme_documentation_url": "https://help.shopify.com/manual/online-store/themes",
     "theme_support_url": "https://support.shopify.com/"
@@ -39,12 +39,12 @@
       {
         "type": "color_scheme_group",
         "id": "color_schemes",
-        "info": "t:settings_schema.colors.settings.info",
         "definition": [
           {
             "type": "color",
             "id": "background",
-            "label": "t:settings_schema.colors.settings.background.label"
+            "label": "t:settings_schema.colors.settings.background.label",
+            "default": "#FFFFFF"
           },
           {
             "type": "color_background",
@@ -55,27 +55,32 @@
           {
             "type": "color",
             "id": "text",
-            "label": "t:settings_schema.colors.settings.text.label"
+            "label": "t:settings_schema.colors.settings.text.label",
+            "default": "#121212"
           },
           {
             "type": "color",
             "id": "button",
-            "label": "t:settings_schema.colors.settings.button_background.label"
+            "label": "t:settings_schema.colors.settings.button_background.label",
+            "default": "#121212"
           },
           {
             "type": "color",
             "id": "button_label",
-            "label": "t:settings_schema.colors.settings.button_label.label"
+            "label": "t:settings_schema.colors.settings.button_label.label",
+            "default": "#FFFFFF"
           },
           {
             "type": "color",
             "id": "secondary_button_label",
-            "label": "t:settings_schema.colors.settings.secondary_button_label.label"
+            "label": "t:settings_schema.colors.settings.secondary_button_label.label",
+            "default": "#121212"
           },
           {
             "type": "color",
             "id": "shadow",
-            "label": "t:settings_schema.colors.settings.shadow.label"
+            "label": "t:settings_schema.colors.settings.shadow.label",
+            "default": "#121212"
           }
         ],
         "role": {
@@ -214,8 +219,12 @@
             "label": "t:settings_schema.animations.settings.animations_hover_elements.options__1.label"
           },
           {
-            "value": "3d-lift",
+            "value": "vertical-lift",
             "label": "t:settings_schema.animations.settings.animations_hover_elements.options__2.label"
+          },
+          {
+            "value": "3d-lift",
+            "label": "t:settings_schema.animations.settings.animations_hover_elements.options__3.label"
           }
         ],
         "default": "default",
@@ -1304,55 +1313,55 @@
         "type": "text",
         "id": "social_facebook_link",
         "label": "t:settings_schema.social-media.settings.social_facebook_link.label",
-        "info": "t:settings_schema.social-media.settings.social_facebook_link.info"
+        "placeholder": "t:settings_schema.social-media.settings.social_facebook_link.info"
       },
       {
         "type": "text",
         "id": "social_instagram_link",
         "label": "t:settings_schema.social-media.settings.social_instagram_link.label",
-        "info": "t:settings_schema.social-media.settings.social_instagram_link.info"
+        "placeholder": "t:settings_schema.social-media.settings.social_instagram_link.info"
       },
       {
         "type": "text",
         "id": "social_youtube_link",
         "label": "t:settings_schema.social-media.settings.social_youtube_link.label",
-        "info": "t:settings_schema.social-media.settings.social_youtube_link.info"
+        "placeholder": "t:settings_schema.social-media.settings.social_youtube_link.info"
       },
       {
         "type": "text",
         "id": "social_tiktok_link",
         "label": "t:settings_schema.social-media.settings.social_tiktok_link.label",
-        "info": "t:settings_schema.social-media.settings.social_tiktok_link.info"
+        "placeholder": "t:settings_schema.social-media.settings.social_tiktok_link.info"
       },
       {
         "type": "text",
         "id": "social_twitter_link",
         "label": "t:settings_schema.social-media.settings.social_twitter_link.label",
-        "info": "t:settings_schema.social-media.settings.social_twitter_link.info"
+        "placeholder": "t:settings_schema.social-media.settings.social_twitter_link.info"
       },
       {
         "type": "text",
         "id": "social_snapchat_link",
         "label": "t:settings_schema.social-media.settings.social_snapchat_link.label",
-        "info": "t:settings_schema.social-media.settings.social_snapchat_link.info"
+        "placeholder": "t:settings_schema.social-media.settings.social_snapchat_link.info"
       },
       {
         "type": "text",
         "id": "social_pinterest_link",
         "label": "t:settings_schema.social-media.settings.social_pinterest_link.label",
-        "info": "t:settings_schema.social-media.settings.social_pinterest_link.info"
+        "placeholder": "t:settings_schema.social-media.settings.social_pinterest_link.info"
       },
       {
         "type": "text",
         "id": "social_tumblr_link",
         "label": "t:settings_schema.social-media.settings.social_tumblr_link.label",
-        "info": "t:settings_schema.social-media.settings.social_tumblr_link.info"
+        "placeholder": "t:settings_schema.social-media.settings.social_tumblr_link.info"
       },
       {
         "type": "text",
         "id": "social_vimeo_link",
         "label": "t:settings_schema.social-media.settings.social_vimeo_link.label",
-        "info": "t:settings_schema.social-media.settings.social_vimeo_link.info"
+        "placeholder": "t:settings_schema.social-media.settings.social_vimeo_link.info"
       }
     ]
   },

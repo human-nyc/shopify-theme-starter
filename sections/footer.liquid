@@ -4,9 +4,6 @@
 {{ 'component-list-menu.css' | asset_url | stylesheet_tag }}
 {{ 'component-list-payment.css' | asset_url | stylesheet_tag }}
 {{ 'component-list-social.css' | asset_url | stylesheet_tag }}
-{%- if section.settings.enable_country_selector or section.settings.enable_language_selector -%}
-  {{ 'component-localization-form.css' | asset_url | stylesheet_tag }}
-{%- endif -%}
 
 {%- style -%}
   .footer {
@@ -47,7 +44,7 @@
   -%}
   {%- if section.blocks.size > 0
     or section.settings.newsletter_enable
-    or section.settings.show_social
+    or section.settings.show_social and has_social_icons == true
     or section.settings.enable_follow_on_shop
   -%}
     {%- unless only_empty_brand -%}
@@ -110,7 +107,7 @@
                           | divided_by: settings.brand_image.aspect_ratio
                         -%}
                         <div
-                          class="footer-block__image-wrapper global-media-settings"
+                          class="footer-block__image-wrapper"
                           style="max-width: min(100%, {{ settings.brand_image_width }}px);"
                         >
                           {{
@@ -131,7 +128,7 @@
                         <div class="rte">{{ settings.brand_description }}</div>
                       {%- endif -%}
                       {%- if block.settings.show_social and has_social_icons -%}
-                        {%- render 'social-icons' -%}
+                        {%- render 'social-icons', class: 'footer__list-social' -%}
                       {%- endif -%}
                     </div>
                   {%- when 'image' -%}
@@ -139,7 +136,7 @@
                       {%- if block.settings.image != blank -%}
                         {%- assign image_size_2x = block.settings.image_width | times: 2 | at_most: 5760 -%}
                         <div
-                          class="footer-block__image-wrapper global-media-settings"
+                          class="footer-block__image-wrapper"
                           style="max-width: min(100%, {{ block.settings.image_width }}px);"
                         >
                           <img
@@ -242,7 +239,7 @@
           {%- endif -%}
 
           {%- if section.settings.show_social and has_social_icons -%}
-            {%- render 'social-icons' -%}
+            {%- render 'social-icons', class: 'footer__list-social' -%}
           {%- endif -%}
         </div>
       </div>
@@ -375,13 +372,9 @@
   </div>
 </footer>
 
-{%- if section.settings.enable_country_selector or section.settings.enable_language_selector -%}
-  <script src="{{ 'localization-form.js' | asset_url }}" defer="defer"></script>
-{%- endif -%}
-
 {% schema %}
 {
-  "name": "Footer",
+  "name": "t:sections.footer.name",
   "blocks": [
     {
       "type": "@app"
@@ -490,94 +483,94 @@
     {
       "type": "color_scheme",
       "id": "color_scheme",
-      "label": "Color scheme",
+      "label": "t:sections.all.colors.label",
       "default": "background-1"
     },
     {
       "type": "header",
-      "content": "Email Signup",
-      "info": "Subscribers added automatically to your “accepted marketing” customer list. [Learn more](https://help.shopify.com/manual/customers/manage-customers)"
+      "content": "t:sections.footer.settings.header__1.content",
+      "info": "t:sections.footer.settings.header__1.info"
     },
     {
       "type": "checkbox",
       "id": "newsletter_enable",
       "default": true,
-      "label": "Show email signup"
+      "label": "t:sections.footer.settings.newsletter_enable.label"
     },
     {
       "type": "inline_richtext",
       "id": "newsletter_heading",
       "default": "Subscribe to our emails",
-      "label": "Heading"
+      "label": "t:sections.footer.settings.newsletter_heading.label"
     },
     {
       "type": "header",
-      "content": "Follow on Shop",
-      "info": "To allow customers to follow your store on the Shop app from your storefront, Shop Pay must be enabled. [Learn more](https://help.shopify.com/manual/online-store/themes/customizing-themes/follow-on-shop)"
+      "content": "t:sections.footer.settings.header__9.content",
+      "info": "t:sections.footer.settings.header__9.info"
     },
     {
       "type": "checkbox",
       "id": "enable_follow_on_shop",
       "default": true,
-      "label": "Enable Follow on Shop"
+      "label": "t:sections.footer.settings.enable_follow_on_shop.label"
     },
     {
       "type": "header",
-      "content": "Social media icons",
-      "info": "To display your social media accounts, link them in your [theme settings](/editor?context=theme&category=social%20media)."
+      "content": "t:sections.footer.settings.header__2.content",
+      "info": "t:sections.footer.settings.header__2.info"
     },
     {
       "type": "checkbox",
       "id": "show_social",
       "default": true,
-      "label": "Show social media icons"
+      "label": "t:sections.footer.settings.show_social.label"
     },
     {
       "type": "header",
-      "content": "Country/region selector",
-      "info": "To add a country/region, go to your [market settings.](/admin/settings/markets)"
+      "content": "t:sections.footer.settings.header__3.content",
+      "info": "t:sections.footer.settings.header__4.info"
     },
     {
       "type": "checkbox",
       "id": "enable_country_selector",
       "default": true,
-      "label": "Enable country/region selector"
+      "label": "t:sections.footer.settings.enable_country_selector.label"
     },
     {
       "type": "header",
-      "content": "Language selector",
-      "info": "To add a language, go to your [language settings.](/admin/settings/languages)"
+      "content": "t:sections.footer.settings.header__5.content",
+      "info": "t:sections.footer.settings.header__6.info"
     },
     {
       "type": "checkbox",
       "id": "enable_language_selector",
       "default": true,
-      "label": "Enable language selector"
+      "label": "t:sections.footer.settings.enable_language_selector.label"
     },
     {
       "type": "header",
-      "content": "Payment methods"
+      "content": "t:sections.footer.settings.header__7.content"
     },
     {
       "type": "checkbox",
       "id": "payment_enable",
       "default": true,
-      "label": "Show payment icons"
+      "label": "t:sections.footer.settings.payment_enable.label"
     },
     {
       "type": "header",
-      "content": "Policy links",
-      "info": "To add store policies, go to your [policy settings](/admin/settings/legal)."
+      "content": "t:sections.footer.settings.header__8.content",
+      "info": "t:sections.footer.settings.header__8.info"
     },
     {
       "type": "checkbox",
       "id": "show_policy",
       "default": false,
-      "label": "Show policy links"
+      "label": "t:sections.footer.settings.show_policy.label"
     },
     {
       "type": "header",
-      "content": "Spacing"
+      "content": "t:sections.all.spacing"
     },
     {
       "type": "range",
@@ -586,12 +579,12 @@
       "max": 100,
       "step": 4,
       "unit": "px",
-      "label": "Top margin",
+      "label": "t:sections.footer.settings.margin_top.label",
       "default": 0
     },
     {
       "type": "header",
-      "content": "Section padding"
+      "content": "t:sections.all.padding.section_padding_heading"
     },
     {
       "type": "range",
@@ -600,7 +593,7 @@
       "max": 100,
       "step": 4,
       "unit": "px",
-      "label": "Top padding",
+      "label": "t:sections.all.padding.padding_top",
       "default": 36
     },
     {
@@ -610,7 +603,7 @@
       "max": 100,
       "step": 4,
       "unit": "px",
-      "label": "Bottom padding",
+      "label": "t:sections.all.padding.padding_bottom",
       "default": 36
     }
   ],

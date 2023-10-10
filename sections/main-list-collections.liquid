@@ -49,13 +49,13 @@
 </div>
 {% schema %}
 {
-  "name": "Collections list page",
+  "name": "t:sections.main-list-collections.name",
   "class": "section",
   "settings": [
     {
       "type": "inline_richtext",
       "id": "title",
-      "label": "Heading",
+      "label": "t:sections.main-list-collections.settings.title.label",
       "default": "Collections"
     },
     {
@@ -64,31 +64,52 @@
       "options": [
         {
           "value": "alphabetical",
-          "label": "Alphabetically, A-Z"
+          "label": "t:sections.main-list-collections.settings.sort.options__1.label"
         },
         {
           "value": "alphabetical_reversed",
-          "label": "Alphabetically, Z-A"
+          "label": "t:sections.main-list-collections.settings.sort.options__2.label"
         },
         {
           "value": "date_reversed",
-          "label": "Date, new to old"
+          "label": "t:sections.main-list-collections.settings.sort.options__3.label"
         },
         {
           "value": "date",
-          "label": "Date, old to new"
+          "label": "t:sections.main-list-collections.settings.sort.options__4.label"
         },
         {
           "value": "products_high",
-          "label": "Product count, high to low"
+          "label": "t:sections.main-list-collections.settings.sort.options__5.label"
         },
         {
           "value": "products_low",
-          "label": "Product count, low to high"
+          "label": "t:sections.main-list-collections.settings.sort.options__6.label"
         }
       ],
       "default": "alphabetical",
-      "label": "Sort collections by:"
+      "label": "t:sections.main-list-collections.settings.sort.label"
+    },
+    {
+      "type": "select",
+      "id": "image_ratio",
+      "options": [
+        {
+          "value": "adapt",
+          "label": "t:sections.main-list-collections.settings.image_ratio.options__1.label"
+        },
+        {
+          "value": "portrait",
+          "label": "t:sections.main-list-collections.settings.image_ratio.options__2.label"
+        },
+        {
+          "value": "square",
+          "label": "t:sections.main-list-collections.settings.image_ratio.options__3.label"
+        }
+      ],
+      "default": "adapt",
+      "label": "t:sections.main-list-collections.settings.image_ratio.label",
+      "info": "t:sections.main-list-collections.settings.image_ratio.info"
     },
     {
       "type": "range",
@@ -97,11 +118,11 @@
       "max": 5,
       "step": 1,
       "default": 3,
-      "label": "Number of columns on desktop"
+      "label": "t:sections.main-list-collections.settings.columns_desktop.label"
     },
     {
       "type": "header",
-      "content": "Mobile Layout"
+      "content": "t:sections.main-list-collections.settings.header_mobile.content"
     },
     {
       "type": "select",
@@ -109,15 +130,15 @@
       "options": [
         {
           "value": "1",
-          "label": "1 column"
+          "label": "t:sections.main-list-collections.settings.columns_mobile.options__1.label"
         },
         {
           "value": "2",
-          "label": "2 columns"
+          "label": "t:sections.main-list-collections.settings.columns_mobile.options__2.label"
         }
       ],
       "default": "2",
-      "label": "Number of columns on mobile"
+      "label": "t:sections.main-list-collections.settings.columns_mobile.label"
     }
   ]
 }
